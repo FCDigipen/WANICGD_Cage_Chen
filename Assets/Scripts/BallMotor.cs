@@ -13,6 +13,7 @@ public class BallMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += transform.up * Time.deltaTime;
+        Debug.Log(transform.position);
     }
 }
