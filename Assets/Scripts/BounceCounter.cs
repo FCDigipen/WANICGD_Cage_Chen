@@ -15,6 +15,6 @@ public class BounceCounter : MonoBehaviour
 
     public void updateCounter() {
         ++bounces;
-        text.text = $"Bounces: {bounces}";
+        text.text = $"Bounces: {bounces / 2}";
     }
 }
