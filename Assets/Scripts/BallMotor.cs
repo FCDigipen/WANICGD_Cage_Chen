@@ -52,6 +52,7 @@ public class BallMotor : MonoBehaviour
     }
 
     public void Reflect() { // reflect velocity on trigger enter
+        audioSource.Play();
         velocity *= -1;
     }
 }
