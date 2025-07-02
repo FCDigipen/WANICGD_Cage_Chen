@@ -34,7 +34,7 @@ public class BallMotor : MonoBehaviour
         } 
         if((positionOnScreen.y <= 0 && velocity.y < 0) || (positionOnScreen.y >= cam.pixelHeight && velocity.y > 0)) // y bounce
         {
-            velocity.y = -velocity.y;
+            velocity.y *= -1;
         } 
     }
 }
