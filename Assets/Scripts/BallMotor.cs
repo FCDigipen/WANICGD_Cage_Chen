@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -10,9 +11,12 @@ public class BallMotor : MonoBehaviour
 {
     // Start is called before the first frame update
     public Camera cam;
+    [SerializeField]
+    private TextMeshProUGUI text;
     public float speed = 5f;
     private Vector2 velocity;
     private AudioSource audioSource;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -51,6 +55,7 @@ public class BallMotor : MonoBehaviour
 
     public void Reflect() { // reflect velocity on trigger enter
         audioSource.Play();
+        text.GetComponent<BounceCounter>().updateCounter();
         velocity *= -1;
     }
 }
