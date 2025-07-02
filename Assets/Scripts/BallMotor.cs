@@ -45,11 +45,15 @@ public class BallMotor : MonoBehaviour
         {
             velocity.x *= -1;
             audioSource.Play();
+            text.GetComponent<BounceCounter>().updateCounter();
+            text.GetComponent<BounceCounter>().updateCounter();
         } 
         if((positionOnScreen.y <= 0 && velocity.y < 0) || (positionOnScreen.y >= cam.pixelHeight && velocity.y > 0)) // y bounce
         {
             velocity.y *= -1;
             audioSource.Play();
+            text.GetComponent<BounceCounter>().updateCounter();
+            text.GetComponent<BounceCounter>().updateCounter();
         } 
     }
 
