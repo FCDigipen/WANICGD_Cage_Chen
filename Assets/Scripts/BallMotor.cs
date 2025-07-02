@@ -13,11 +13,9 @@ public class BallMotor : MonoBehaviour
     public float speed = 5f;
     private Vector2 velocity;
     private AudioSource audioSource;
-    private Collider2D ballCollider2D;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        ballCollider2D = GetComponent<Collider2D>();
         velocity = new Vector2(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f,1f));
         velocity.Normalize();
         velocity *= speed;
