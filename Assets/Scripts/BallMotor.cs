@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class BallMotor : MonoBehaviour
 {
@@ -31,7 +32,8 @@ public class BallMotor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"collided with {collision.name}");   
+        BallMotor otherBallMotor = collision.GetComponent<BallMotor>();
+        if(otherBallMotor != null) {otherBallMotor.Reflect();}
     }
 
     // bounce checks!
@@ -47,5 +49,9 @@ public class BallMotor : MonoBehaviour
             velocity.y *= -1;
             audioSource.Play();
         } 
+    }
+
+    public void Reflect() { // reflect velocity on trigger enter
+        velocity *= -1;
     }
 }
